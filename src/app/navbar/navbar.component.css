@@ -1,0 +1,15 @@
+
+.navbar{
+    max-height: 52px !important;
+}
+ 
+/* Navbar transparente al inicio */
+.navbar.bg-transparent {
+    background-color: transparent !important;
+    transition: background-color 0.4s ease;
+}
+
+/* Navbar oscuro al hacer scroll */
+.navbar.scrolled {
+    background-color: #0066FF !important; 
+}

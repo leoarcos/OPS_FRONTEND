@@ -1,0 +1,316 @@
+
+<app-spinner></app-spinner>
+<section class="hero text-white   flex-column justify-content-center align-items-left text-left ">
+  <div class="container">
+    <div class="row align-items-center text-center" style="margin-top: 3REM;">
+        <div class="col-md-12 col-sm-12 text-center justify-content-center align-items-center">
+            <h1 class="display-3 fw-bold">OBSERVATORIO EN FRONTERAS</h1>
+            <p class="lead">
+                Arauca, Guajira, Norte de Santander, Vichada, Guainía, Nariño, Choco, Putumayo. Colombia -  Estado Zulia, Tachira, Apure y amazonas. Venezuela
+            </p>
+            
+            
+                    
+        </div>
+        
+        <div class="col-md-12 col-sm-12  ">
+            
+           <!-- Search box -->
+            <div class="search-box mt-4  ">
+                <div class="input-group">
+                    <span class="input-group-text border-0">
+                        <i class="bi bi-search text-info"></i>
+                    </span>
+                    <ng-select
+                        #ngSelectEvento
+                        class="form-select p-0 text-uppercase  "
+                        appendTo="body"
+                        [items]="sivigilaEventos"
+                        bindLabel="componente"
+                        bindValue="componente"
+                        placeholder="Selecciona un componente:&nbsp;"
+                        [(ngModel)]="componenteSeleccionado"
+                        [searchable]="true"
+                        (ngModelChange)="eventoSeleccionadoVer($event)"
+                        >
+                        
+                    </ng-select>
+                    <button class="btn btn-search" (click)="toggleSelect()">
+                        <i class="bi {{ isDropdownOpen ? 'bi-chevron-double-up' : 'bi-chevron-double-down' }}"></i>
+                    </button>
+                    <!--
+                    <input list="eventos" class="form-control border-0" placeholder="Buscar evento..">
+                     
+                    <datalist id="eventos"  >
+                        <option value="Concierto de rock">
+                        <option value="Conferencia de tecnología">
+                        <option value="Festival gastronómico">
+                        <option value="Maratón 10K">
+                        <option value="Charla de liderazgo">
+                    </datalist>
+                    <button class="btn btn-search">
+                        <i class="bi bi-chevron-double-down"></i>
+                    </button>-->
+                </div>
+            </div> 
+        </div>
+    
+        <!-- Tarjeta con imagen sobrepuesta -->
+        <div class="col-6 col-sm-4 col-md-2 mb-4" style="margin-top:4rem;">
+            <div class="capacidad-card p-4   shadow-sm rounded position-relative">
+                <div class="icon-wrapper">
+                    
+                    <span style="font-size: 4rem;" >98</span>
+                    <!--<i class="bi bi-clipboard-pulse text-primary" style="font-size: 4rem; "></i>-->
+                </div>
+                <h5 class="fw-semibold mt-5">
+                    <span href="#" class="capacidad-link">Dato</span>
+                </h5>
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4" style="margin-top:4rem;">
+            <div class="capacidad-card p-4   shadow-sm rounded position-relative">
+                <div class="icon-wrapper">
+                    <span style="font-size: 4rem;"  >98</span>
+                </div>
+                <h5 class="fw-semibold mt-5">
+                    <span href="#" class="capacidad-link">Dato</span>
+                </h5>
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4" style="margin-top:4rem;">
+            <div class="capacidad-card p-4   shadow-sm rounded position-relative">
+                <div class="icon-wrapper">
+                    <span style="font-size: 4rem;"  >98</span>
+                </div>
+                <h5 class="fw-semibold mt-5">
+                    <span href="#" class="capacidad-link">Dato</span>
+                </h5>
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4" style="margin-top:4rem;">
+            <div class="capacidad-card p-4   shadow-sm rounded position-relative">
+                <div class="icon-wrapper">
+                    <span style="font-size: 4rem;"  >98</span>
+                </div>
+                <h5 class="fw-semibold mt-5">
+                    <span href="#" class="capacidad-link">Dato</span>
+                </h5>
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4" style="margin-top:4rem;">
+            <div class="capacidad-card p-4   shadow-sm rounded position-relative">
+                <div class="icon-wrapper">
+                    <span style="font-size: 4rem;"  >98</span>
+                </div>
+                <h5 class="fw-semibold mt-5">
+                    <span href="#" class="capacidad-link">Dato</span>
+                </h5>
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4" style="margin-top:4rem;">
+            <div class="capacidad-card p-4   shadow-sm rounded position-relative">
+                <div class="icon-wrapper">
+                    <span style="font-size: 4rem;"  >98</span>
+                </div>
+                <h5 class="fw-semibold mt-5">
+                    <span href="#" class="capacidad-link">Dato</span>
+                </h5>
+            </div>
+        </div>
+    
+    
+
+    </div>
+
+
+  </div>
+</section>
+<section class=" bg-primary py-5 ">
+    <div class="container">
+        <div class="row align-items-center">
+             <div class="col-12 mb-4 mb-lg-0">
+
+                <h2 class="fw-bold mb-3 text-white">Selecciona País y/o estado/departamento</h2>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0">
+
+                    <!-- Search box -->
+                <div class="search-box mt-4  ">
+                    <div class="input-group">
+                        <span class="input-group-text border-0">
+                            <i class="bi bi-search text-info"></i>
+                        </span>
+                        <select class="form-select border-1" placeholder="Seleccion estado o deparatamento.."  [(ngModel)]="selectedRegion" (change)="mostrarSpinner();ocultarSpinner()">
+                            <option value="">Selecciona País</option> 
+                            <option value="🇨🇴 Colombia">🇨🇴 Colombia</option> 
+                            <option value="🇻🇪 Venezuela">🇻🇪 Venezuela</option> 
+                            
+                           
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0">
+
+                    <!-- Search box -->
+                <div class="search-box mt-4  ">
+                    <div class="input-group">
+                        <span class="input-group-text border-0">
+                            <i class="bi bi-search text-info"></i>
+                        </span>
+                        <select class="form-select border-1" placeholder="Seleccion estado o deparatamento.."  [(ngModel)]="selectedDpto"  (change)="mostrarSpinner();ocultarSpinner()">
+                            <option *ngIf="!selectedRegion" selected value="">Selecciona un País primero</option>
+                            <ng-container *ngIf="selectedRegion=='🇨🇴 Colombia'">
+                                <option value="">Selecciona Departamento</option> 
+                                <option value="CO-Arauca">🇨🇴 Arauca</option>
+                                <option value="CO-Chocó">🇨🇴 Chocó</option>
+                                <option value="CO-Guainía">🇨🇴 Guainía</option>
+                                <option value="CO-La Guajira">🇨🇴 La Guajira</option>
+                                <option value="CO-Nariño">🇨🇴 Nariño</option>
+                                <option value="CO-Norte de Santander">🇨🇴 Norte de Santander</option>
+                                <option value="CO-Putumayo">🇨🇴 Putumayo</option>
+                                <option value="CO-Vichada">🇨🇴 Vichada</option>
+                            </ng-container>
+                            <ng-container *ngIf="selectedRegion=='🇻🇪 Venezuela'">
+                                <option value="">Selecciona Estado</option> 
+                                <option value="VE-Amazonas">🇻🇪 Amazonas</option> 
+                                <option value="VE-Apure">🇻🇪 Apure</option>
+                                <option value="VE-Táchira">🇻🇪 Táchira</option>
+                                <option value="VE-Zulia">🇻🇪 Zulia</option>
+                            </ng-container>
+                           
+                            
+                           
+                        </select>
+                        
+                    </div>
+                </div>
+            </div> 
+            <div class="col-sm-12 col-md-4 mb-4 mb-lg-0">
+
+                    <!-- Search box -->
+                <div class="search-box mt-4  ">
+                    <div class="input-group">
+                        <span class="input-group-text border-0">
+                            <i class="bi bi-search text-info"></i>
+                        </span>
+                        <select class="form-select border-1" placeholder="Seleccion año.."  [(ngModel)]="selectedAno" (change)="mostrarSpinner();ocultarSpinner()">
+                            <option value="">Selecciona Año</option> 
+                            <option value="🇨🇴 Colombia">🇨🇴 Colombia</option> 
+                            <option value="🇻🇪 Venezuela">🇻🇪 Venezuela</option> 
+                            
+                           
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div class="container">
+        
+        <h6 class="text-center mb-4 ">Resultados de la consulta </h6>
+        <h4 class="text-center">
+            <span>{{selectedRegion}}</span>
+            <span *ngIf="selectedDpto.split('-')[1]">,</span>
+            <span>&nbsp;{{selectedDpto.split('-')[1]}}</span>
+            <span *ngIf="selectedRegion   && dataEvento?.titulo">:</span>
+            <span>&nbsp;{{dataEvento?.titulo}}</span>
+        </h4>
+        <div class="row text-center mb-4">
+            <div class="col-sm-12 col-md-12 " style="font-size: smaller;">
+                <div *ngFor="let dat of dataEventos ">
+                    <ng-container *ngIf="dat.id==eventoSeleccionado">
+                        <!--<h6 class="text-center">{{ dat?.titulo }}</h6> -->
+                         
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item" *ngFor="let subtema of dat.subtemas; let i = index">
+                                
+                                <h2 class="accordion-header" [attr.id]="'flush-heading' + i">
+                                <button class="accordion-button collapsed "
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        [attr.data-bs-target]="'#flush-collapse' + i"
+                                        [attr.aria-expanded]="'false'"
+                                        [attr.aria-controls]="'flush-collapse' + i">
+                                    {{ subtema.id }}: {{ subtema.nombre }}
+                                </button>
+                                </h2>
+                                
+                                <div [attr.id]="'flush-collapse' + i"
+                                    class="accordion-collapse collapse"
+                                    [attr.aria-labelledby]="'flush-heading' + i"
+                                    data-bs-parent="#accordionFlushExample">
+                                    
+                                <div class="accordion-body">
+                                    {{ subtema.descripcion || 'No hay descripción disponible.' }}
+                                </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-container>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 mb-4">
+                <div class="card p-3 shadow-sm">
+                    <h5 class="text-center">Atenciones por Componente</h5>
+                    <canvas #componenteChart class="text-uppercase"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card p-3 shadow-sm">
+                    <h5 class="text-center">Atenciones por Nacionalidad</h5>
+                    <canvas #nacionalidadChart></canvas>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card p-3 shadow-sm">
+                    <h5 class="text-center">Atenciones por Sexo</h5>
+                    <canvas #sexoChart></canvas>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card p-3 shadow-sm">
+                    <h5 class="text-center">Atenciones por Grupo Poblacional</h5>
+                    <canvas #poblacionalChart></canvas>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="card p-3 shadow-sm">
+                    <h5 class="text-center">Atenciones por Periodo Epidemiológico</h5>
+                    <canvas #periodoChart></canvas>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card p-3 shadow-sm">
+                    <h5 class="text-center">Atenciones por Edad</h5>
+                    <canvas #edadChart></canvas>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card p-3 shadow-sm">
+                    <h5 class="text-center">Atenciones por Año</h5>
+                    <canvas #anioChart></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,290 @@
+.hero {
+  height: 100vh; /* Pantalla completa */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('/assets/images/hero.jpg') center/cover no-repeat;
+  padding-top: 80px; /* espacio por el navbar fijo */
+  height: 700px !important;
+   
+}
+/* Si la pantalla es menor o igual a 768px (tablets y móviles) */
+@media (max-width: 360px) {
+  .hero {
+    height: 1800px !important;
+  }
+  #map{
+    margin-top: -7rem;
+  }
+}
+@media (max-width: 575px) {
+  .hero {
+    height: 940px !important;
+  }
+  #map{
+    margin-top: -7rem;
+  }
+}
+.btn-search{
+    background-color: #0066FF;
+    color:white;
+}
+/* Borde general */
+.search-box {
+  border: 1px solid transparent;
+  border-radius: 0 !important; /* cuadrado */ 
+}
+
+/* Input group sin bordes internos */
+.input-group-text,
+.form-control, .form-select,
+.btn-search {
+  border: none !important;
+  border-radius: 0 !important; /* cuadrado */
+}
+
+/* Input */
+.form-control, .input-group-text {
+  background: #ffffffc8;
+  box-shadow: none;
+}
+
+/* Botón */
+.btn-search {
+  background-color: #0066FF;
+  color: #fff;
+  text-transform: uppercase; 
+  border-radius: 0 !important; /* cuadrado */
+}
+
+.btn-search:hover {
+  background-color: #0066ffa6;
+}
+/*
+  background-color: #d95333;
+}
+*/
+/* Contenedor del item */
+.stat-item {
+  color: #fff;
+  font-size: 0.9rem;
+}
+.colombia{
+    
+  border-left: 4px solid #0066FF;
+}
+.venezuela{
+    
+  border-left: 4px solid #f2643c;
+}
+
+/* Línea vertical */
+.stat-item .line {
+  width: 3px;
+  height: 100%;
+  background-color: #0066FF; /* azul */
+  margin-right: 8px;
+}
+
+/* Icono */
+.stat-item .icon {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-right: 8px;
+}
+
+/* Número */
+.stat-number {
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+/* Texto */
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+} 
+.icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: #0066FF; /* naranja */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.categories-section {
+  background-color: #0f172a; /* fondo oscuro */
+  color: #fff;
+}
+
+.category-title {
+  font-weight: 600;
+  height: 80px !important;
+}
+.category-card {
+  position: relative;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;   /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.7);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Imagen de fondo con zoom */
+.category-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+/* Overlay oscuro encima de la imagen */
+.category-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); /* sombra negra semi-transparente */
+  z-index: 1;
+}
+
+/* Efecto zoom en hover */
+.category-card:hover::before {
+  transform: scale(1.2);
+}
+
+/* Texto centrado */
+.category-card span {
+  position: relative;
+  z-index: 2; /* encima de la sombra */
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+.category-card:hover span {
+  transform: scale(1.1); 
+}
+/* deja el contenedor del mapa intacto */
+.leaflet-container {
+  overflow: hidden !important; 
+}
+
+/* fuerza a los popups a mostrarse encima del mapa */
+.leaflet-pane,
+.leaflet-popup-pane,
+.leaflet-popup {
+  overflow: visible !important;
+  z-index: 9999 !important;
+}
+
+/* opcional: asegurarte que el contenido no se recorte */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  overflow: visible !important;
+}
+
+
+
+
+
+.leaflet-bootstrap-popup .card {
+  border-radius: 10px;  
+}
+
+.leaflet-bootstrap-popup  {
+   
+  z-index: 9999 !important;
+}
+
+.leaflet-container { 
+   
+  /*overflow: visible !important;*/
+  background-color: transparent; 
+}
+
+.leaflet-bootstrap-popup .position-relative {
+  margin-top: -25px; /* subir el pin */
+}
+#map {
+  background: transparent !important;
+}
+
+.capacidad-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid transparent;
+  overflow: visible; /* necesario para que la imagen sobresalga */
+}
+
+.capacidad-card:hover {
+  border: 1px solid #007bff;
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+  position: absolute;
+  top: -50px; /* mitad de la imagen fuera */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.icon-wrapper img {
+  max-width: 70%;
+  border-radius: 50%;
+}
+
+
+ng-select{
+    
+  background: #ffffffc8;
+  border: none !important;
+  border-radius: 0 !important; /* cuadrado */ 
+}
+::ng-deep .ng-dropdown-panel .ng-option {
+  background-color: #42a0f3; /* color de fondo (ejemplo: azul claro) */
+  color: white;               /* color del texto */
+}
+
+::ng-deep .ng-dropdown-panel .ng-option:hover {
+  background-color: #d0eaff; /* color al pasar el mouse */
+  color:black;
+}
+.link:hover{
+  border-bottom: 1px solid ;
+  cursor:pointer;
+}
+.truncate-text {
+ font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;    /* número máximo de líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.uppercase-select ::ng-deep .ng-option,
+.uppercase-select ::ng-deep .ng-value {
+  text-transform: uppercase !important;
+}

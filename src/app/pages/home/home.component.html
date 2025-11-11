@@ -1,0 +1,363 @@
+<app-spinner></app-spinner>
+<section class="hero text-white   flex-column justify-content-center align-items-left text-left ">
+  <div class="container">
+    <div class="row" style="margin-top: 3REM;">
+        <div class="col-md-6 col-sm-6">
+            <h1 class="display-3 fw-bold">OBSERVATORIO EN FRONTERAS</h1>
+            <p class="lead">
+                Arauca, Guajira, Norte de Santander, Vichada, Guainía, Nariño, Choco, Putumayo. Colombia -  Estado Zulia, Tachira, Apure y amazonas. Venezuela
+            </p>
+            
+            <!-- Stats -->
+            <div class="row mt-5  ">
+                <div class="col-sm-6 col-md-6 text-center justify-content-center align-items-center ">
+                  
+                    <div class="stat-item d-flex  colombia">
+                        <div class="line"></div>
+                        <div class="icon me-2">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="text">
+                            <div class="stat-number">37,005</div>
+                            <div class="stat-label">Colombia</div>
+                        </div>
+                    </div>
+
+                </div> 
+                
+                <div class="col-sm-6 col-md-6 ">
+                  
+                    <div class="stat-item d-flex align-items-center venezuela">
+                        <div class="line"></div>
+                        <div class="icon me-2">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="text">
+                            <div class="stat-number">37,005</div>
+                            <div class="stat-label">Venezuela</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                    
+        </div>
+        <div class="col-md-6 col-sm-6 leaflet-container ">
+            
+           <!-- Search box -->
+            <div class="search-box mt-4  ">
+                <div class="input-group">
+                    <span class="input-group-text border-0">
+                        <i class="bi bi-search text-info"></i>
+                    </span>
+                    
+                    <ng-select
+                        #ngSelectEvento
+                        class="form-select p-0 text-uppercase uppercase-select"
+                        appendTo="body"
+                        [items]="sivigilaEventos"
+                        bindLabel="componente"
+                        bindValue="componente"
+                        placeholder="Selecciona un componente:&nbsp;"
+                        [(ngModel)]="eventoSeleccionado"
+                        [searchable]="true"
+                         
+                        >
+                        
+                    </ng-select>
+                    <!--<input type="text" class="form-control border-0" placeholder="Buscar evento..">-->
+                    <button class="btn btn-search" (click)="eventoSeleccionadoVer()">Ir a evento</button>
+                </div>
+            </div>
+            <div id="map" style="height: 500px;"></div>     
+        </div>
+
+    </div>
+
+
+  </div>
+</section>
+<section class="reports-section py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+      
+        <!-- Columna izquierda -->
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <h2 class="fw-bold mb-3">Atenciones en Salud  <br>47,000 Atenciones reportadas</h2>
+            <p class="text-muted">
+            Desagregadas por Sexo, curso de vida, nacionalidad y etnia. 
+            </p>
+
+            <!-- Opciones -->
+            <div class="mt-4">
+            <div class="d-flex align-items-center mb-3">
+                <div class="icon-box me-3">
+                <i class="bi bi-file-earmark-text"></i>
+                </div>
+                <span title="Atención en salud por IPS (Cubo 029)">Atención en salud por IPS</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="icon-box me-3">
+                <i class="bi bi-bar-chart"></i>
+                </div>
+                <span title="Atenciones en salud por Cooperación (de acuerdo a variables Manual Esfera y Clúster Salud)">Atenciones en salud por Cooperación</span>
+            </div> 
+            </div>
+
+            <!-- Enlace -->
+            <a  href="#" class="fw-bold text-primary text-decoration-none mt-4 d-inline-block link" >
+            SEARCH REPORTS <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-lg-4 text-center">
+            <img src="/assets/images/logoG.png" alt="Reports preview" class="img-fluid">
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0 text-end">
+            <h2 class="fw-bold mb-3">Investigaciones <br>en frontera</h2>
+            <p class="text-muted">
+                Desagregadas por Sexo, curso de vida, nacionalidad y etnia.
+            </p>
+
+            <!-- Opciones -->
+            <div class="mt-4">
+                <div class="d-flex align-items-center justify-content-end mb-3">
+                <span class="me-3" title="Atención en salud por IPS (Cubo 029)">Atención en salud por IPS</span>
+                <div class="icon-box">
+                    <i class="bi bi-file-earmark-text"></i>
+                </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-end mb-3">
+                <span class="me-3" title="Atenciones en salud por Cooperación (de acuerdo a variables Manual Esfera y Clúster Salud)">Atenciones en salud por Cooperación</span>
+                <div class="icon-box">
+                    <i class="bi bi-bar-chart"></i>
+                </div>
+                </div>
+            </div>
+
+            <!-- Enlace -->
+            <a href="/search"  class="fw-bold text-primary text-decoration-none mt-4 d-inline-block link ">
+                <i class="bi bi-arrow-up-right ms-1"></i> SEARCH REPORTS 
+            </a>
+        </div>
+
+    </div>
+  </div>
+</section> 
+<section class="categories-section py-5" *ngIf="sivigilaEventos && sivigilaEventos.length > 0">
+    <div class="container">
+        
+        <h2 class="text-center mb-4 text-white">Principales Eventos de Interés en Salud Pública en las Fronteras (SIVIGILA) Población Migrante y Población de Acogida. </h2>
+        <div class="row text-center mb-4">
+        
+            <!-- Salud Mental -->
+            <div class="col-6 col-md-2">
+               <h6 class="category-title text-white" [routerLink]="['/detailEvent/'+sivigilaEventos[0].componente+'/null']">
+                    <i class="bi bi-people "></i><br> 
+                    <span class="link text-uppercase">{{sivigilaEventos[0].componente}}</span>
+                </h6>
+                <div class="d-flex flex-column gap-3">
+                    <ng-container *ngFor="let report of sivigilaEventos[0].eventos | slice:0:5">
+                        <div ><!--*ngFor="let subtema of report.subtemas | slice:0:5; let i = index"-->
+                            <div class="category-card border border-primary" [title]="report">
+                                <span class="truncate-text" style="font-size: smaller;">{{report}}</span>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+
+            </div>
+
+            <div class="col-6 col-md-2">
+                <h6 class="category-title text-white"  [routerLink]="['/detailEvent/'+sivigilaEventos[1].componente+'/null']">
+                    <i class="bi bi-balloon-heart"></i><br> <span class="link text-uppercase">{{sivigilaEventos[1].componente}}</span>
+                </h6>
+                <div class="d-flex flex-column gap-3">
+                     <ng-container *ngFor="let report of sivigilaEventos[1].eventos | slice:0:5">
+                        <div >
+                            <div class="category-card border border-primary">
+                                <span class="truncate-text" style="font-size: smaller;">{{report}}</span>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6 class="category-title text-white"  [routerLink]="['/detailEvent/'+sivigilaEventos[2].componente+'/null']">
+                    <i class="bi bi-building"></i><br> <span class="link text-uppercase">{{sivigilaEventos[2].componente}}</span>
+                </h6>
+                <div class="d-flex flex-column gap-3">
+                      <ng-container *ngFor="let report of sivigilaEventos[2].eventos | slice:0:5">
+                        <div >
+                            <div class="category-card border border-primary">
+                                <span class="truncate-text" style="font-size: smaller;">{{report}}</span>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6 class="category-title text-white"  [routerLink]="['/detailEvent/'+sivigilaEventos[3].componente+'/null']">
+                    <i class="bi bi-eye"></i><br> <span class="link text-uppercase">{{sivigilaEventos[3].componente}}</span>
+                </h6>
+                <div class="d-flex flex-column gap-3">
+                     <ng-container *ngFor="let report of sivigilaEventos[3].eventos | slice:0:5">
+                        <div >
+                            <div class="category-card border border-primary">
+                                <span class="truncate-text" style="font-size: smaller;">{{report}}</span>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6 class="category-title text-white"  [routerLink]="['/detailEvent/'+sivigilaEventos[4].componente+'/null']">
+                    <i class="bi bi-arrow-through-heart"></i><br> <span class="link text-uppercase">{{sivigilaEventos[4].componente}}</span>
+                </h6>
+                <div class="d-flex flex-column gap-3">
+                      <ng-container *ngFor="let report of sivigilaEventos[4].eventos | slice:0:5">
+                        <div >
+                            <div class="category-card border border-primary">
+                                <span class="truncate-text" style="font-size: smaller;">{{report}}</span>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6 class="category-title text-white"  [routerLink]="['/detailEvent/'+sivigilaEventos[7].componente+'/null']">
+                    <i class="bi bi-clipboard-data"></i><br> <span class="link text-uppercase">{{sivigilaEventos[7].componente}}</span>
+                </h6>
+                <div class="d-flex flex-column gap-3">
+                     <ng-container *ngFor="let report of sivigilaEventos[7].eventos | slice:0:5 ">
+                        <div >
+                            <div class="category-card border border-primary">
+                                <span class="truncate-text"  style="font-size: smaller;">{{report}}</span>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+         
+        
+        <div class="text-center mt-4">
+            <a href="#" class="fw-bold text-white text-decoration-none text-center mt-4 d-inline-block link" [routerLink]="['/detailEvent/null/null']">
+            MAS EVENTOS <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="capacidad-section py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center text-center">
+            <div class="col-12 mb-4 mb-lg-0">
+
+                <h2 class="fw-bold mb-3">Eventos en Fronteras</h2>
+            </div>
+            <div class="col-12 mb-4 mb-lg-0">
+
+                    <!-- Search box -->
+                <div class="search-box mt-4  ">
+                    <div class="input-group">
+                        <span class="input-group-text border-0">
+                            <i class="bi bi-search text-info"></i>
+                        </span>
+                        <select class="form-select border-0" placeholder="Seleccion estado o deparatamento.."  [(ngModel)]="selectedRegion" (ngModelChange)="initMapCapacidadSection($event)" >
+                            <option value="">Selecciona departamento o estado</option> 
+                            <optgroup label="🇨🇴 Colombia">
+                                <option value="CO-Arauca">Arauca</option>
+                                <option value="CO-Chocó">Chocó</option>
+                                <option value="CO-Guainía">Guainía</option>
+                                <option value="CO-La Guajira">La Guajira</option>
+                                <option value="CO-Nariño">Nariño</option>
+                                <option value="CO-Norte de Santander">Norte de Santander</option>
+                                <option value="CO-Putumayo">Putumayo</option>
+                                <option value="CO-Vichada">Vichada</option>
+                            </optgroup>
+                            
+                            <optgroup label="🇻🇪 Venezuela">
+                                <option value="VE-Amazonas">Amazonas</option> 
+                                <option value="VE-Apure">Apure</option>
+                                <option value="VE-Táchira">Táchira</option>
+                                <option value="VE-Zulia">Zulia</option>
+                            </optgroup>
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center text-center" >
+            
+            
+            <!-- Tarjeta con imagen sobrepuesta -->
+            <div class="col-6 col-md-3 mb-4" style="margin-top:4rem;">
+                <div class="capacidad-card p-4 bg-white shadow-sm rounded position-relative">
+                    <div class="icon-wrapper">
+                        
+                        <span style="font-size: 4rem;" class="text-primary">98</span>
+                        <!--<i class="bi bi-clipboard-pulse text-primary" style="font-size: 4rem; "></i>-->
+                    </div>
+                    <h5 class="fw-semibold mt-5">
+                        <a href="#" class="capacidad-link">Servicios</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4" style="margin-top:4rem;">
+                <div class="capacidad-card p-4 bg-white shadow-sm rounded position-relative">
+                    <div class="icon-wrapper">
+                        <span style="font-size: 4rem;" class="text-primary">98</span>
+                    </div>
+                    <h5 class="fw-semibold mt-5">
+                        <a href="#" class="capacidad-link">N° de usuarios</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4" style="margin-top:4rem;">
+                <div class="capacidad-card p-4 bg-white shadow-sm rounded position-relative">
+                    <div class="icon-wrapper">
+                        <span style="font-size: 4rem;" class="text-primary">98</span>
+                    </div>
+                    <h5 class="fw-semibold mt-5">
+                        <a href="#" class="capacidad-link">Hombres</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4" style="margin-top:4rem;">
+                <div class="capacidad-card p-4 bg-white shadow-sm rounded position-relative">
+                    <div class="icon-wrapper">
+                        <span style="font-size: 4rem;" class="text-primary">98</span>
+                    </div>
+                    <h5 class="fw-semibold mt-5">
+                        <a href="#" class="capacidad-link">Mujeres</a>
+                    </h5>
+                </div>
+            </div>
+ 
+        </div>
+        <div class="row align-items-center text-center" >
+             
+            <div class="col-sm-12 col-md-4  mb-4 leaflet-container"  >
+                
+                <div id="map2" style="height: 500px;"></div>  
+            </div>
+            <div class="col-sm-12 col-md-8  mb-4 leaflet-container"  >
+                
+                <div class="chart-container" style="position: relative; height:100%;  ">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+         <div class="text-center mt-4">
+            <a href="#" class="fw-bold text-primary text-decoration-none text-center mt-4 d-inline-block link" [routerLink]="[(selectedRegion)?'/detailEvent/null/'+selectedRegion:'/detailEvent/null/null']">
+            MAS EVENTOS <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+

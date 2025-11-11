@@ -1,0 +1,882 @@
+[
+  {
+    "id": "9.1",
+    "titulo": "Salud Mental y Acompañamiento Psicosocial",
+    "subtemas": [
+      {
+        "id": "9.1.1",
+        "nombre": "Autoayuda y apoyo en la comunidad"
+      },
+      {
+        "id": "9.1.2",
+        "nombre": "Primeros auxiliares psicológicos"
+      },
+      {
+        "id": "9.1.3",
+        "nombre": "Intervenciones psicológicas"
+      },
+      {
+        "id": "9.1.4",
+        "nombre": "Clínica de atención en salud mental"
+      },
+      {
+        "id": "9.1.5",
+        "nombre": "Entrega de medicamentos psicotrópicos esenciales"
+      },
+      {
+        "id": "9.1.6",
+        "nombre": "Protección de los derechos de las personas con TSM"
+      },
+      {
+        "id": "9.1.7",
+        "nombre": "Transición a la poscrisis"
+      }
+    ]
+  },
+  {
+    "id": "9.2",
+    "titulo": "Acciones de Prevención y Atención a enfermedades No Transmisibles",
+    "subtemas": [
+      {
+        "id": "9.2.1",
+        "nombre": "Diagnóstico"
+      },
+      {
+        "id": "9.2.2",
+        "nombre": "Tratamiento"
+      },
+      {
+        "id": "9.2.3",
+        "nombre": "Entrega de medicamentos"
+      },
+      {
+        "id": "9.2.4",
+        "nombre": "Entrega de insumos"
+      },
+      {
+        "id": "9.2.5",
+        "nombre": "Control y seguimiento médico de casos"
+      },
+      {
+        "id": "9.2.6",
+        "nombre": "Acciones de promoción y prevención comunitaria"
+      },
+      {
+        "id": "9.2.7",
+        "nombre": "Acompañamiento técnico a nivel institucional"
+      },
+      {
+        "id": "9.2.8",
+        "nombre": "Otra"
+      }
+    ]
+  },
+  {
+    "id": "9.3",
+    "titulo": "Acciones de Prevención y Atención a enfermedades Transmisibles",
+    "subtemas": [
+      {
+        "id": "9.3.1",
+        "nombre": "Diagnóstico"
+      },
+      {
+        "id": "9.3.2",
+        "nombre": "Tratamiento"
+      },
+      {
+        "id": "9.3.3",
+        "nombre": "Entrega de medicamentos"
+      },
+      {
+        "id": "9.3.4",
+        "nombre": "Entrega de insumos"
+      },
+      {
+        "id": "9.3.5",
+        "nombre": "Gestión de casos"
+      },
+      {
+        "id": "9.3.6",
+        "nombre": "Control y seguimiento médico de casos"
+      },
+      {
+        "id": "9.3.7",
+        "nombre": "Acciones de promoción y prevención comunitaria"
+      },
+      {
+        "id": "9.3.8",
+        "nombre": "Acompañamiento técnico a nivel institucional"
+      },
+      {
+        "id": "9.3.9",
+        "nombre": "Vacunación"
+      },
+      {
+        "id": "9.3.10",
+        "nombre": "Promoción de información"
+      },
+      {
+        "id": "9.3.11",
+        "nombre": "Vigilancia, alerta temprana y respuesta (EWAR)"
+      },
+      {
+        "id": "9.3.12",
+        "nombre": "Generación y notificación de alertas"
+      },
+      {
+        "id": "9.3.13",
+        "nombre": "Detección y gestión de Brotes"
+      }
+    ]
+  },
+  {
+    "id": "9.4",
+    "titulo": "Acciones de Promoción de la salud Materna y Salud Perinatal",
+    "subtemas": [
+      {
+        "id": "9.4.1",
+        "nombre": "Atención a gestantes/Ecografía"
+      },
+      {
+        "id": "9.4.2",
+        "nombre": "Atención a gestantes/Información"
+      },
+      {
+        "id": "9.4.3",
+        "nombre": "Educación y comunicación para la gestación"
+      },
+      {
+        "id": "9.4.4",
+        "nombre": "Atención a gestantes/Consultas de psicología"
+      },
+      {
+        "id": "9.4.5",
+        "nombre": "Atención a gestantes/Consultas de nutrición"
+      },
+      {
+        "id": "9.4.6",
+        "nombre": "Atención a gestantes/Consultas de odontología"
+      },
+      {
+        "id": "9.4.7",
+        "nombre": "Atención a gestantes/Atención médica diferente a control prenatal"
+      },
+      {
+        "id": "9.4.8",
+        "nombre": "Atención a gestantes/Otra(s)"
+      }
+    ]
+  },
+  {
+    "id": "9.5",
+    "titulo": "Prevención y Atención VIH",
+    "subtemas": [
+      {
+        "id": "9.5.1",
+        "nombre": "VIH/ITS/Diagnostico (incluye pruebas rápidas)"
+      },
+      {
+        "id": "9.5.2",
+        "nombre": "VIH/ITS/Exámenes de laboratorio de seguimiento"
+      },
+      {
+        "id": "9.5.3",
+        "nombre": "VIH/ITS/Entrega de medicamentos Antirretrovirales (ARV)"
+      },
+      {
+        "id": "9.5.4",
+        "nombre": "VIH/ITS/Información"
+      },
+      {
+        "id": "9.5.5",
+        "nombre": "Educación y comunicación en VIH e ITS"
+      },
+      {
+        "id": "9.5.6",
+        "nombre": "VIH/ITS/Control y seguimiento médico de casos"
+      },
+      {
+        "id": "9.5.7",
+        "nombre": "VIH/ITS/Entrega de preservativos y lubricantes (Masculinos y femeninos)"
+      },
+      {
+        "id": "9.5.8",
+        "nombre": "VIH/ITS/Otra(s)"
+      }
+    ]
+  },
+  {
+    "id": "9.6",
+    "titulo": "Acciones en Promoción de Salud sexual y Reproductiva",
+    "subtemas": [
+      {
+        "id": "9.6.1",
+        "nombre": "Educación en DSDR/Entrega de información de derechos sexuales y reproductivos"
+      },
+      {
+        "id": "9.6.2",
+        "nombre": "Educación en DSDR/Información sobre acceso a servicios SSR (Salud Sexual y Reproductiva)"
+      },
+      {
+        "id": "9.6.3",
+        "nombre": "Educación en DSDR/Otra(s)"
+      },
+      {
+        "id": "9.6.4",
+        "nombre": "IVE (Interrupción voluntaria del embarazo)"
+      },
+      {
+        "id": "9.6.5",
+        "nombre": "IVE/Consulta"
+      },
+      {
+        "id": "9.6.6",
+        "nombre": "IVE/Asesoría"
+      },
+      {
+        "id": "9.6.7",
+        "nombre": "IVE/Interrupción farmacológica"
+      },
+      {
+        "id": "9.6.8",
+        "nombre": "IVE/Interrupción no farmacológica por dilatación y evacuación"
+      },
+      {
+        "id": "9.6.9",
+        "nombre": "IVE/Gestión de casos"
+      },
+      {
+        "id": "9.6.10",
+        "nombre": "Implementación del plan de acción"
+      },
+      {
+        "id": "9.6.11",
+        "nombre": "Anticoncepción/Asesoría"
+      },
+      {
+        "id": "9.6.12",
+        "nombre": "Anticoncepción/Educación en uso de métodos anticonceptivos (sin inicio de métodos)"
+      },
+      {
+        "id": "9.6.13",
+        "nombre": "Anticoncepción/Entrega de conservantes"
+      },
+      {
+        "id": "9.6.14",
+        "nombre": "Anticoncepción/Entrega de anticonceptivos de emergencia"
+      },
+      {
+        "id": "9.6.15",
+        "nombre": "Anticoncepción/Procedimientos de métodos quirúrgicos"
+      },
+      {
+        "id": "9.6.16",
+        "nombre": "Anticoncepción/Métodos de larga y corta duración"
+      },
+      {
+        "id": "9.6.17",
+        "nombre": "Anticoncepción/Provisión de métodos temporales de corta duración"
+      },
+      {
+        "id": "9.6.18",
+        "nombre": "Anticoncepción/Seguimiento de adherencia al método"
+      },
+      {
+        "id": "9.6.19",
+        "nombre": "Anticoncepción/Otra(s)"
+      }
+    ]
+  },
+  {
+    "id": "9.7",
+    "titulo": "Acciones de Prevención y atención Clínica a la violencia Sexual",
+    "subtemas": [
+      {
+        "id": "9.7.1",
+        "nombre": "Violencia Sexual/Gestión de casos (inducción e involucramiento, valoración, plan de acción, implementación del plan de acción, seguimiento al caso y cierre al caso)"
+      },
+      {
+        "id": "9.7.2",
+        "nombre": "Violencia Sexual/Acciones de prevención en violencia sexual"
+      },
+      {
+        "id": "9.7.3",
+        "nombre": "Violencia Sexual/acompañamiento psicosocial"
+      },
+      {
+        "id": "9.7.4",
+        "nombre": "Violencia sexual/capacitación y fortalecimiento de capacidades comunitarias"
+      },
+      {
+        "id": "9.7.5",
+        "nombre": "Violencia Sexual/Entrega de Kit PEP"
+      },
+      {
+        "id": "9.7.6",
+        "nombre": "Violencia Sexual/Fortalecimiento de capacidades Institucionales"
+      },
+      {
+        "id": "9.7.7",
+        "nombre": "Violencia sexual/Otra(s)"
+      }
+    ]
+  },
+  {
+    "id": "9.8",
+    "titulo": "Acciones de Promoción y Atención en Niñez",
+    "subtemas": [
+      {
+        "id": "9.8.1",
+        "nombre": "Atención en salud - Valoración general – Triage"
+      },
+      {
+        "id": "9.8.2",
+        "nombre": "Atención por pediatría"
+      },
+      {
+        "id": "9.8.3",
+        "nombre": "Atención por salud Mental y Acompañamiento Psicosocial"
+      },
+      {
+        "id": "9.8.4",
+        "nombre": "Realización de exámenes paraclínicos básicos"
+      },
+      {
+        "id": "9.8.5",
+        "nombre": "Tamizaje y/o atención en salud oral"
+      },
+      {
+        "id": "9.8.6",
+        "nombre": "Tamizaje y/o atención en salud visual"
+      },
+      {
+        "id": "9.8.7",
+        "nombre": "Tamizaje y/o atención en salud Auditiva"
+      },
+      {
+        "id": "9.8.8",
+        "nombre": "Valoración y acompañamiento psicosocial"
+      },
+      {
+        "id": "9.8.9",
+        "nombre": "Vacunación"
+      },
+      {
+        "id": "9.8.10",
+        "nombre": "Facilitar medicamentos esenciales"
+      },
+      {
+        "id": "9.8.11",
+        "nombre": "Realización de controles de crecimiento y desarrollo"
+      },
+      {
+        "id": "9.8.12",
+        "nombre": "Gestión de casos"
+      },
+      {
+        "id": "9.8.13",
+        "nombre": "Acciones de promoción y prevención"
+      },
+      {
+        "id": "9.8.14",
+        "nombre": "Remisión a la ruta de promoción y mantenimiento de la salud"
+      },
+      {
+        "id": "9.8.15",
+        "nombre": "Atención de casos a niños y niñas con discapacidad"
+      },
+      {
+        "id": "9.8.16",
+        "nombre": "Cirugías"
+      },
+      {
+        "id": "9.8.17",
+        "nombre": "Fortalecimiento de capacidades comunitarias - AIEPI"
+      }
+    ]
+  },
+  {
+    "id": "9.9",
+    "titulo": "Acciones de Promoción de la Salud Nutricional",
+    "subtemas": [
+      {
+        "id": "9.9.1",
+        "nombre": "Consejería o educación en lactancia materna y alimentación complementaria"
+      },
+      {
+        "id": "9.9.2",
+        "nombre": "Suplementación con micronutrientes niños/gestantes/lactantes"
+      },
+      {
+        "id": "9.9.3",
+        "nombre": "Suplementación nutricional niños/gestantes/lactantes"
+      },
+      {
+        "id": "9.9.4",
+        "nombre": "Manejo ambulatorio de la desnutrición aguda"
+      },
+      {
+        "id": "9.9.5",
+        "nombre": "Consulta de nutrición"
+      },
+      {
+        "id": "9.9.6",
+        "nombre": "Servicios de atención primaria de la salud"
+      },
+      {
+        "id": "9.9.7",
+        "nombre": "Programas de seguridad alimentaria que incluyan alimentos o asistencia basada en el uso de dinero en efectivo"
+      }
+    ]
+  },
+  {
+    "id": "9.10",
+    "titulo": "Vacunación",
+    "subtemas": [
+      {
+        "id": "9.10.1",
+        "nombre": "Apoyo en campañas de vacunación masiva"
+      },
+      {
+        "id": "9.10.2",
+        "nombre": "Acompañamiento y fortalecimiento al PAI"
+      },
+      {
+        "id": "9.10.3",
+        "nombre": "Detección de casos específicos"
+      },
+      {
+        "id": "9.10.4",
+        "nombre": "Cadena de frío"
+      },
+      {
+        "id": "9.10.5",
+        "nombre": "Apoyo al talento humano"
+      },
+      {
+        "id": "9.10.6",
+        "nombre": "Apoyo logístico"
+      },
+      {
+        "id": "9.10.7",
+        "nombre": "Comunicación"
+      },
+      {
+        "id": "9.10.8",
+        "nombre": "Acciones de promoción para el acceso"
+      },
+      {
+        "id": "9.10.9",
+        "nombre": "Otra"
+      }
+    ]
+  },
+  {
+    "id": "9.11",
+    "titulo": "Respuesta a Epidemias y Pandemias",
+    "subtemas": [
+      {
+        "id": "9.11.1",
+        "nombre": "Vigilancia y alerta temprana"
+      },
+      {
+        "id": "9.11.2",
+        "nombre": "Laboratorios"
+      },
+      {
+        "id": "9.11.3",
+        "nombre": "Fortalecimiento de los recursos humanos"
+      },
+      {
+        "id": "9.11.4",
+        "nombre": "Prevención y control de infecciones"
+      },
+      {
+        "id": "9.11.5",
+        "nombre": "Comunicación de riesgos y participación comunitaria"
+      },
+      {
+        "id": "9.11.6",
+        "nombre": "Capacidades adicionales relacionadas con las enfermedades zoonóticas"
+      },
+      {
+        "id": "9.11.7",
+        "nombre": "Gestión de emergencias sanitarias"
+      },
+      {
+        "id": "9.11.8",
+        "nombre": "Inmunización"
+      }
+    ]
+  },
+  {
+    "id": "9.12",
+    "titulo": "Prevención y Atención Tuberculosis",
+    "subtemas": [
+      {
+        "id": "9.12.1",
+        "nombre": "Diagnóstico"
+      },
+      {
+        "id": "9.12.2",
+        "nombre": "Tratamiento"
+      },
+      {
+        "id": "9.12.3",
+        "nombre": "Entrega de medicamentos"
+      },
+      {
+        "id": "9.12.4",
+        "nombre": "Entrega de insumos"
+      },
+      {
+        "id": "9.12.5",
+        "nombre": "Gestión de casos"
+      },
+      {
+        "id": "9.12.6",
+        "nombre": "Control y seguimiento médico de casos"
+      },
+      {
+        "id": "9.12.7",
+        "nombre": "Acciones de promoción y prevención comunitaria"
+      },
+      {
+        "id": "9.12.8",
+        "nombre": "Acompañamiento técnico a nivel institucional"
+      },
+      {
+        "id": "9.12.9",
+        "nombre": "Promoción de información"
+      },
+      {
+        "id": "9.12.10",
+        "nombre": "Aplicación medidas de control específicas"
+      },
+      {
+        "id": "9.12.11",
+        "nombre": "Otra"
+      }
+    ]
+  },
+  {
+    "id": "9.13",
+    "titulo": "Atención a Lesiones y Traumas",
+    "subtemas": [
+      {
+        "id": "9.13.1",
+        "nombre": "Prestar atención Trauma"
+      },
+      {
+        "id": "9.13.2",
+        "nombre": "Establecer rápidamente sistemas de derivación"
+      },
+      {
+        "id": "9.13.3",
+        "nombre": "Establecer clínicas móviles u hospitales de campo"
+      },
+      {
+        "id": "9.13.4",
+        "nombre": "Fortalecer capacidades en las competencias y los conocimientos necesarios para tratar las lesiones"
+      },
+      {
+        "id": "9.13.5",
+        "nombre": "Establecer o fortalecer protocolos normalizados de triage y atención a lesiones y traumas"
+      },
+      {
+        "id": "9.13.6",
+        "nombre": "Proporcionar profilaxis contra los tétanos"
+      },
+      {
+        "id": "9.13.7",
+        "nombre": "Asegurar normas mínimas de seguridad y gobernanza para todas las instalaciones que prestan atención a lesiones y traumas"
+      },
+      {
+        "id": "9.13.8",
+        "nombre": "Garantizar el acceso oportuno a servicios de rehabilitación, equipos de asistencia prioritarios y ayudas a la movilidad para pacientes heridos"
+      },
+      {
+        "id": "9.13.9",
+        "nombre": "Acceso oportuno a apoyo psicosocial"
+      },
+      {
+        "id": "9.13.10",
+        "nombre": "Establecer o fortalecer sistemas de información"
+      }
+    ]
+  },
+  {
+    "id": "9.14",
+    "titulo": "Salud Oral",
+    "subtemas": [
+      {
+        "id": "9.14.1",
+        "nombre": "Diagnóstico"
+      },
+      {
+        "id": "9.14.2",
+        "nombre": "Higiene"
+      },
+      {
+        "id": "9.14.3",
+        "nombre": "Atención clínica"
+      },
+      {
+        "id": "9.14.4",
+        "nombre": "Especialidades"
+      },
+      {
+        "id": "9.14.5",
+        "nombre": "Rehabilitación"
+      },
+      {
+        "id": "9.14.6",
+        "nombre": "Promoción de la salud Oral"
+      },
+      {
+        "id": "9.14.7",
+        "nombre": "Cirugías"
+      },
+      {
+        "id": "9.14.8",
+        "nombre": "Entrega de Insumos y/o Medicamentos"
+      },
+      {
+        "id": "9.14.9",
+        "nombre": "Otra"
+      }
+    ]
+  },
+  {
+    "id": "9.15",
+    "titulo": "Salud Visual",
+    "subtemas": [
+      {
+        "id": "9.15.1",
+        "nombre": "Diagnóstico"
+      },
+      {
+        "id": "9.15.2",
+        "nombre": "Atención Optometría"
+      },
+      {
+        "id": "9.15.3",
+        "nombre": "Especialidades"
+      },
+      {
+        "id": "9.15.4",
+        "nombre": "Rehabilitación"
+      },
+      {
+        "id": "9.15.5",
+        "nombre": "Cirugías"
+      },
+      {
+        "id": "9.15.6",
+        "nombre": "Entrega de ayudas"
+      },
+      {
+        "id": "9.15.7",
+        "nombre": "Otra"
+      }
+    ]
+  },
+  {
+    "id": "9.16",
+    "titulo": "Acciones a nivel Institucional",
+    "subtemas": [
+      {
+        "id": "9.16.1",
+        "nombre": "Espacios de formación al talento humano en salud y otros actores"
+      },
+      {
+        "id": "9.16.2",
+        "nombre": "Acompañamiento técnico"
+      },
+      {
+        "id": "9.16.3",
+        "nombre": "Dotación de insumos"
+      },
+      {
+        "id": "9.16.4",
+        "nombre": "Donación de medicamentos"
+      },
+      {
+        "id": "9.16.5",
+        "nombre": "Adecuaciones e infraestructura establecimientos de salud"
+      },
+      {
+        "id": "9.16.6",
+        "nombre": "Acciones en agua, saneamiento e higiene en establecimientos de salud"
+      },
+      {
+        "id": "9.16.7",
+        "nombre": "Apoyo en la elaboración de planes de preparación y respuesta ante emergencias"
+      },
+      {
+        "id": "9.16.8",
+        "nombre": "Entrega de recursos para la implementación de paquetes mínimos de respuesta"
+      },
+      {
+        "id": "9.16.9",
+        "nombre": "Adecuaciones enfoque intercultural para la prestación de servicios de salud"
+      },
+      {
+        "id": "9.16.10",
+        "nombre": "Construcción de rutas y protocolos para la respuesta"
+      },
+      {
+        "id": "9.16.11",
+        "nombre": "Acompañamiento en la definición de políticas, planes, programas"
+      }
+    ]
+  },
+  {
+    "id": "9.17",
+    "titulo": "Acciones a nivel Comunitario",
+    "subtemas": [
+      {
+        "id": "9.17.1",
+        "nombre": "Diagnósticos Participativos"
+      },
+      {
+        "id": "9.17.2",
+        "nombre": "Espacios de formación"
+      },
+      {
+        "id": "9.17.3",
+        "nombre": "Intercambio de Saberes"
+      },
+      {
+        "id": "9.17.4",
+        "nombre": "Acompañamiento técnico"
+      },
+      {
+        "id": "9.17.5",
+        "nombre": "Entrega de insumos"
+      },
+      {
+        "id": "9.17.6",
+        "nombre": "Adecuaciones e infraestructura escenarios comunitarios en salud"
+      },
+      {
+        "id": "9.17.7",
+        "nombre": "Acciones en agua, saneamiento e higiene"
+      },
+      {
+        "id": "9.17.8",
+        "nombre": "Apoyo en la elaboración de planes de preparación y respuesta ante emergencias"
+      },
+      {
+        "id": "9.17.9",
+        "nombre": "Construcción de rutas y protocolos para la respuesta"
+      },
+      {
+        "id": "9.17.10",
+        "nombre": "Vigilancia de Base Comunitaria"
+      },
+      {
+        "id": "9.17.11",
+        "nombre": "Participación Comunitaria"
+      },
+      {
+        "id": "9.17.12",
+        "nombre": "Comunicación del Riesgo en Salud"
+      },
+      {
+        "id": "9.17.13",
+        "nombre": "Promoción de la Salud"
+      },
+      {
+        "id": "9.17.14",
+        "nombre": "Educación"
+      },
+      {
+        "id": "9.17.15",
+        "nombre": "Otra"
+      }
+    ]
+  },
+  {
+    "id": "9.18",
+    "titulo": "Gestión de Casos",
+    "subtemas": [
+      {
+        "id": "9.18.1",
+        "nombre": "Acciones de promoción para el acceso a derechos"
+      },
+      {
+        "id": "9.18.2",
+        "nombre": "Acompañamiento psicosocial"
+      },
+      {
+        "id": "9.18.3",
+        "nombre": "Aislamiento por evento transmisible"
+      },
+      {
+        "id": "9.18.4",
+        "nombre": "Alojamiento"
+      },
+      {
+        "id": "9.18.5",
+        "nombre": "Consulta de ginecología"
+      },
+      {
+        "id": "9.18.6",
+        "nombre": "Consulta de pediatría"
+      },
+      {
+        "id": "9.18.7",
+        "nombre": "Consulta en salud oral"
+      },
+      {
+        "id": "9.18.8",
+        "nombre": "Consulta por medicina general"
+      },
+      {
+        "id": "9.18.9",
+        "nombre": "Consulta por salud mental especializada"
+      },
+      {
+        "id": "9.18.10",
+        "nombre": "Entrega de efectivo"
+      },
+      {
+        "id": "9.18.11",
+        "nombre": "Entrega de insumos"
+      },
+      {
+        "id": "9.18.12",
+        "nombre": "Entrega de kits"
+      },
+      {
+        "id": "9.18.13",
+        "nombre": "Entrega de medicamentos"
+      },
+      {
+        "id": "9.18.14",
+        "nombre": "Exámenes de laboratorio"
+      },
+      {
+        "id": "9.18.15",
+        "nombre": "Interconsultas / Consultas por especialista"
+      },
+      {
+        "id": "9.18.16",
+        "nombre": "Orientación en salud sexual y reproductiva"
+      },
+      {
+        "id": "9.18.17",
+        "nombre": "Otra"
+      },
+      {
+        "id": "9.18.18",
+        "nombre": "Transporte medicalizado"
+      },
+      {
+        "id": "9.18.19",
+        "nombre": "Transporte no medicalizado"
+      }
+    ]
+  }
+]

@@ -2,7 +2,7 @@
   height: 100vh; /* Pantalla completa */
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('/assets/images/hero.jpg') center/cover no-repeat;
   padding-top: 80px; /* espacio por el navbar fijo */
-  height: 600px !important;
+  height: 800px !important;
    
 }
 /* Si la pantalla es menor o igual a 768px (tablets y móviles) */
@@ -38,6 +38,22 @@
 .btn-search {
   border: none !important;
   border-radius: 0 !important; /* cuadrado */
+}
+
+/* deja el contenedor del mapa intacto */
+.leaflet-container {
+  overflow: hidden !important; 
+}
+#map1, #map2 {
+  background: transparent !important;
+}
+
+/* fuerza a los popups a mostrarse encima del mapa */
+.leaflet-pane,
+.leaflet-popup-pane,
+.leaflet-popup {
+  overflow: visible !important;
+  z-index: 9999 !important;
 }
 
 /* Input */

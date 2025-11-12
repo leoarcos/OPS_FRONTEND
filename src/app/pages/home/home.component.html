@@ -44,7 +44,7 @@
         </div>
         <div class="col-md-6 col-sm-6 leaflet-container ">
             
-           <!-- Search box -->
+           <!-- Search box  
             <div class="search-box mt-4  ">
                 <div class="input-group">
                     <span class="input-group-text border-0">
@@ -65,10 +65,10 @@
                         >
                         
                     </ng-select>
-                    <!--<input type="text" class="form-control border-0" placeholder="Buscar evento..">-->
+                   
                     <button class="btn btn-search" (click)="eventoSeleccionadoVer()">Ir a evento</button>
                 </div>
-            </div>
+            </div>-->
             <div id="map" style="height: 500px;"></div>     
         </div>
 
@@ -83,30 +83,30 @@
       
         <!-- Columna izquierda -->
         <div class="col-lg-4 mb-4 mb-lg-0">
-            <h2 class="fw-bold mb-3">Atenciones en Salud  <br>47,000 Atenciones reportadas</h2>
+            <h2 class="fw-bold mb-3">Atenciones en Salud  <br>Población extranjera en Colombia</h2>
             <p class="text-muted">
-            Desagregadas por Sexo, curso de vida, nacionalidad y etnia. 
+             
             </p>
 
             <!-- Opciones -->
             <div class="mt-4">
-            <div class="d-flex align-items-center mb-3">
+            <div class="d-flex align-items-center mb-3" style="cursor:pointer;" [routerLink]="['/detailEvent/null/null']">
                 <div class="icon-box me-3">
                 <i class="bi bi-file-earmark-text"></i>
                 </div>
                 <span title="Atención en salud por IPS (Cubo 029)">Atención en salud por IPS</span>
             </div>
-            <div class="d-flex align-items-center mb-3">
+            <div class="d-flex align-items-center mb-3"  style="cursor:pointer;" [routerLink]="['/detailEvent/null/null']">
                 <div class="icon-box me-3">
-                <i class="bi bi-bar-chart"></i>
+                    <i class="bi bi-bar-chart"></i>
                 </div>
-                <span title="Atenciones en salud por Cooperación (de acuerdo a variables Manual Esfera y Clúster Salud)">Atenciones en salud por Cooperación</span>
+                <span title="Atenciones en salud por Cooperación (de acuerdo a variables Manual Esfera y Clúster Salud)">Atenciones en salud prestadas por Cooperación</span>
             </div> 
             </div>
 
             <!-- Enlace -->
-            <a  href="#" class="fw-bold text-primary text-decoration-none mt-4 d-inline-block link" >
-            SEARCH REPORTS <i class="bi bi-arrow-up-right ms-1"></i>
+            <a   [routerLink]="['/detailEvent/null/null']" class="fw-bold text-primary text-decoration-none mt-4 d-inline-block link" >
+            VER REPORTES <i class="bi bi-arrow-up-right ms-1"></i>
             </a>
         </div>
 

@@ -1,0 +1,1 @@
+import{Cb as i,db as o,eb as n,ga as a,ub as p}from"./chunk-RG7UJVX2.js";var r=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=a({type:t,selectors:[["app-detail-geography"]],standalone:!0,features:[i],decls:2,vars:0,template:function(e,s){e&1&&(o(0,"p"),p(1,"detail-geography works!"),n())}})};export{r as DetailGeographyComponent};

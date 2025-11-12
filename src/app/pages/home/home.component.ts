@@ -112,7 +112,7 @@ export class HomeComponent {
         this.documentos = data.files;
         console.log(this.documentos);
       });
-      */
+      
       this.documentosService.getUsuarios().subscribe({
         next: (data) => { 
           console.log(data);
@@ -121,7 +121,7 @@ export class HomeComponent {
           console.error('Error al cargar usuarios:', err.error.error);
           alert('No se pudieron cargar los usuarios');
         }
-      });
+      });*/
     const ruta = 'documentos/base.xlsx';
     this.documentosService.leerExcelLocal(ruta).subscribe({
       next: (data) => {

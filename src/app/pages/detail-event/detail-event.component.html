@@ -12,47 +12,96 @@
             
                     
         </div>
+        <div class="col-md-12 col-sm-12  ">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="map1" style="height: 280px;"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="map2" style="height: 250px;"></div>
+                    
+                </div>
+            </div>
+        </div>
         
         <div class="col-md-12 col-sm-12  ">
-            
-           <!-- Search box -->
-            <div class="search-box mt-4  ">
-                <div class="input-group">
-                    <span class="input-group-text border-0">
-                        <i class="bi bi-search text-info"></i>
-                    </span>
-                    <ng-select
-                        #ngSelectEvento
-                        class="form-select p-0 text-uppercase  "
-                        appendTo="body"
-                        [items]="sivigilaEventos"
-                        bindLabel="componente"
-                        bindValue="componente"
-                        placeholder="Selecciona un componente:&nbsp;"
-                        [(ngModel)]="componenteSeleccionado"
-                        [searchable]="true"
-                        (ngModelChange)="eventoSeleccionadoVer($event)"
-                        >
-                        
-                    </ng-select>
-                    <button class="btn btn-search" (click)="toggleSelect()">
-                        <i class="bi {{ isDropdownOpen ? 'bi-chevron-double-up' : 'bi-chevron-double-down' }}"></i>
-                    </button>
-                    <!--
-                    <input list="eventos" class="form-control border-0" placeholder="Buscar evento..">
-                     
-                    <datalist id="eventos"  >
-                        <option value="Concierto de rock">
-                        <option value="Conferencia de tecnología">
-                        <option value="Festival gastronómico">
-                        <option value="Maratón 10K">
-                        <option value="Charla de liderazgo">
-                    </datalist>
-                    <button class="btn btn-search">
-                        <i class="bi bi-chevron-double-down"></i>
-                    </button>-->
+            <div class="row">
+                
+                <div class="col-sm-6 col-md-4 mb-4 mb-lg-0">
+
+                        <!-- Search box -->
+                    <div class="search-box mt-4  ">
+                        <div class="input-group">
+                            <span class="input-group-text border-0">
+                                <i class="bi bi-search text-info"></i>
+                            </span>
+                            <select class="form-select border-1" placeholder="Seleccion estado o deparatamento.."  [(ngModel)]="selectedRegion" (change)="mostrarSpinner();ocultarSpinner()">
+                                <option value="">Selecciona País</option> 
+                                <option value="🇨🇴 Colombia">🇨🇴 Colombia</option> 
+                                <option value="🇻🇪 Venezuela">🇻🇪 Venezuela</option> 
+                                
+                            
+                            </select>
+                            
+                        </div>
+                    </div>
                 </div>
-            </div> 
+                <div class="col-sm-6 col-md-4 mb-4 mb-lg-0">
+
+                        <!-- Search box -->
+                    <div class="search-box mt-4  ">
+                        <div class="input-group">
+                            <span class="input-group-text border-0">
+                                <i class="bi bi-search text-info"></i>
+                            </span>
+                            <select class="form-select border-1" placeholder="Seleccion estado o deparatamento.."  [(ngModel)]="selectedDpto"  (change)="mostrarSpinner();ocultarSpinner()">
+                                <option *ngIf="!selectedRegion" selected value="">Selecciona un País primero</option>
+                                <ng-container *ngIf="selectedRegion=='🇨🇴 Colombia'">
+                                    <option value="">Selecciona Departamento</option> 
+                                    <option value="CO-Arauca">🇨🇴 Arauca</option>
+                                    <option value="CO-Chocó">🇨🇴 Chocó</option>
+                                    <option value="CO-Guainía">🇨🇴 Guainía</option>
+                                    <option value="CO-La Guajira">🇨🇴 La Guajira</option>
+                                    <option value="CO-Nariño">🇨🇴 Nariño</option>
+                                    <option value="CO-Norte de Santander">🇨🇴 Norte de Santander</option>
+                                    <option value="CO-Putumayo">🇨🇴 Putumayo</option>
+                                    <option value="CO-Vichada">🇨🇴 Vichada</option>
+                                </ng-container>
+                                <ng-container *ngIf="selectedRegion=='🇻🇪 Venezuela'">
+                                    <option value="">Selecciona Estado</option> 
+                                    <option value="VE-Amazonas">🇻🇪 Amazonas</option> 
+                                    <option value="VE-Apure">🇻🇪 Apure</option>
+                                    <option value="VE-Táchira">🇻🇪 Táchira</option>
+                                    <option value="VE-Zulia">🇻🇪 Zulia</option>
+                                </ng-container>
+                            
+                                
+                            
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-sm-12 col-md-4 mb-4 mb-lg-0">
+
+                        <!-- Search box -->
+                    <div class="search-box mt-4  ">
+                        <div class="input-group">
+                            <span class="input-group-text border-0">
+                                <i class="bi bi-search text-info"></i>
+                            </span>
+                            <select class="form-select border-1" placeholder="Seleccion año.."  [(ngModel)]="selectedAno" (change)="mostrarSpinner();ocultarSpinner()">
+                                <option value="">Selecciona Año</option> 
+                                <option value="🇨🇴 Colombia">🇨🇴 Colombia</option> 
+                                <option value="🇻🇪 Venezuela">🇻🇪 Venezuela</option> 
+                                
+                            
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     
         <!-- Tarjeta con imagen sobrepuesta -->
@@ -132,81 +181,7 @@
              <div class="col-12 mb-4 mb-lg-0">
 
                 <h2 class="fw-bold mb-3 text-white">Selecciona País y/o estado/departamento</h2>
-            </div>
-            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0">
-
-                    <!-- Search box -->
-                <div class="search-box mt-4  ">
-                    <div class="input-group">
-                        <span class="input-group-text border-0">
-                            <i class="bi bi-search text-info"></i>
-                        </span>
-                        <select class="form-select border-1" placeholder="Seleccion estado o deparatamento.."  [(ngModel)]="selectedRegion" (change)="mostrarSpinner();ocultarSpinner()">
-                            <option value="">Selecciona País</option> 
-                            <option value="🇨🇴 Colombia">🇨🇴 Colombia</option> 
-                            <option value="🇻🇪 Venezuela">🇻🇪 Venezuela</option> 
-                            
-                           
-                        </select>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0">
-
-                    <!-- Search box -->
-                <div class="search-box mt-4  ">
-                    <div class="input-group">
-                        <span class="input-group-text border-0">
-                            <i class="bi bi-search text-info"></i>
-                        </span>
-                        <select class="form-select border-1" placeholder="Seleccion estado o deparatamento.."  [(ngModel)]="selectedDpto"  (change)="mostrarSpinner();ocultarSpinner()">
-                            <option *ngIf="!selectedRegion" selected value="">Selecciona un País primero</option>
-                            <ng-container *ngIf="selectedRegion=='🇨🇴 Colombia'">
-                                <option value="">Selecciona Departamento</option> 
-                                <option value="CO-Arauca">🇨🇴 Arauca</option>
-                                <option value="CO-Chocó">🇨🇴 Chocó</option>
-                                <option value="CO-Guainía">🇨🇴 Guainía</option>
-                                <option value="CO-La Guajira">🇨🇴 La Guajira</option>
-                                <option value="CO-Nariño">🇨🇴 Nariño</option>
-                                <option value="CO-Norte de Santander">🇨🇴 Norte de Santander</option>
-                                <option value="CO-Putumayo">🇨🇴 Putumayo</option>
-                                <option value="CO-Vichada">🇨🇴 Vichada</option>
-                            </ng-container>
-                            <ng-container *ngIf="selectedRegion=='🇻🇪 Venezuela'">
-                                <option value="">Selecciona Estado</option> 
-                                <option value="VE-Amazonas">🇻🇪 Amazonas</option> 
-                                <option value="VE-Apure">🇻🇪 Apure</option>
-                                <option value="VE-Táchira">🇻🇪 Táchira</option>
-                                <option value="VE-Zulia">🇻🇪 Zulia</option>
-                            </ng-container>
-                           
-                            
-                           
-                        </select>
-                        
-                    </div>
-                </div>
             </div> 
-            <div class="col-sm-12 col-md-4 mb-4 mb-lg-0">
-
-                    <!-- Search box -->
-                <div class="search-box mt-4  ">
-                    <div class="input-group">
-                        <span class="input-group-text border-0">
-                            <i class="bi bi-search text-info"></i>
-                        </span>
-                        <select class="form-select border-1" placeholder="Seleccion año.."  [(ngModel)]="selectedAno" (change)="mostrarSpinner();ocultarSpinner()">
-                            <option value="">Selecciona Año</option> 
-                            <option value="🇨🇴 Colombia">🇨🇴 Colombia</option> 
-                            <option value="🇻🇪 Venezuela">🇻🇪 Venezuela</option> 
-                            
-                           
-                        </select>
-                        
-                    </div>
-                </div>
-            </div>
             
             
             

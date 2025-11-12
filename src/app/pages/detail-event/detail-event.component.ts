@@ -7,7 +7,9 @@ import { SpinnerServiceService } from '../../servicios/spinner-service.service';
 import { SpinnerComponent } from "../../spinner/spinner.component";
 import { EventosService } from '../../servicios/eventos.service';
 import { DocumentosService } from '../../servicios/documentos.service';
+import { FeatureCollection,Geometry, GeoJsonProperties } from "geojson";
 import { Chart } from 'chart.js/auto';
+import * as L from 'leaflet';
 interface SivigilaEvento {
   componente: string;
   eventos: string[];
@@ -36,6 +38,8 @@ export class DetailEventComponent {
     { id: 3, nombre: 'Festival gastronómico' },
     { id: 4, nombre: 'Maratón 10K' },
   ];
+    private map1!: L.Map;  
+    private map2!: L.Map;  
   
   @ViewChild('ngSelectEvento') ngSelectEvento!: NgSelectComponent;
   isDropdownOpen = false;
@@ -163,6 +167,196 @@ export class DetailEventComponent {
       },
       error: (err) => console.error('Error al leer Excel:', err)
     });  
+    
+    this.map1 = L.map('map1', {
+      zoomControl: false,       // Oculta los botones + -
+      dragging: false,          // Desactiva arrastrar
+      scrollWheelZoom: false,   // Desactiva zoom con scroll
+      doubleClickZoom: false,   // Desactiva zoom con doble click
+      boxZoom: false,           // Desactiva zoom con selección
+      keyboard: false,          // Desactiva mover con teclado
+      touchZoom: false          // Desactiva zoom con gestos en móvil
+    }).setView([5, -70], 6); // Centro entre CO y VE
+    //https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png
+    L.tileLayer('https://{s}.tile.openstreetmap.org/dark/{z}/{x}/{y}.png').addTo(this.map1); 
+    
+    // Ejemplo con tus geojson filtrados
+    Promise.all([
+      fetch("assets/colombia-departments.json").then(r => r.json() as Promise<FeatureCollection>)
+      ]).then(([colombia]) => {
+        
+        const style = {
+          color: '#bdb5b5ff',
+          weight: 0.4,
+          fillOpacity: 0.4
+        };
+        // Añadir Colombia
+        // Estados que queremos resaltar
+        
+        const targetDptos = ['Arauca', 'La Guajira', 'Norte de Santander', 'Vichada', 'Guainía', 'Nariño', 'Chocó', 'Putumayo'];
+      
+        
+        
+        L.geoJSON(colombia, {
+          style: (feature: any) => {
+            console.log(feature);
+            if (targetDptos.includes(feature.properties.name)) {
+              return { ...style, fillColor: '#007bff', fillOpacity: 0.4 }; // 🔴 Rojo para resaltados
+            }
+            return { ...style, fillColor: '#e0e0e0', fillOpacity: 0.4 }; // ⚪ Gris claro para los demás
+          },
+          onEachFeature: (feature, layer: L.Polygon) => {
+            layer.bindPopup(` 
+              <div class="card-body text-center">
+                
+                <!-- Pin superior
+                <div class="position-relative mb-2">
+                  
+                        <i class="bi bi-geo-alt"></i>
+              
+                </div>
+                -->
+                <!-- Título -->
+                <h6 class="fw-bold mb-0" style="color:#007bff;">${feature.properties.name}</h6>
+                <p class="text-muted text-uppercase small mb-3">Colombia</p>
+                
+                <!-- Filas de información -->
+                <div class="d-flex justify-content-between border-bottom pb-1 mb-1 small">
+                  <span>CASOS</span>
+                  <span class="fw-semibold"> ${(targetDptos.includes(feature.properties.name))?'1262':'0'}</span>
+                </div> 
+                
+                <!-- Enlace -->
+                <a href="#" class="fw-bold small text-decoration-none text-primary">
+                  <i class="bi bi-file-earmark-text me-1"></i> Mas información
+                </a>
+              </div> 
+            `,{
+              className: "leaflet-bootstrap-popup", // clase para estilos
+              closeButton: false,
+              autoPan: false, 
+              offset: L.point(5, 180) // mueve 150px hacia la derecha
+            });
+            
+            
+            // Abrir popup al pasar el mouse
+            layer.on("mouseover", function () {
+              layer.openPopup();
+              layer.setStyle({ weight: 0.8, fillOpacity: 0.8 });
+            });
+
+            // Cerrar popup cuando se sale con el mouse
+            layer.on("mouseout", function () {
+              layer.closePopup();
+              layer.setStyle({ weight: 0.4, fillOpacity: 0.4 });
+            });
+            
+            // Click -> ejecutar tu función
+            layer.on("click", () => {
+            // this.irEvento(feature);
+            });
+          
+          }
+        }).addTo(this.map1);
+
+        // Unir los features
+        const merged: FeatureCollection = {
+          type: "FeatureCollection",
+          features: [...colombia.features]
+        };
+
+        const bounds = L.geoJSON(merged).getBounds();
+        this.map1.fitBounds(bounds);
+      });
+      
+    this.map2 = L.map('map2', {
+        zoomControl: false,       // Oculta los botones + -
+        dragging: false,          // Desactiva arrastrar
+        scrollWheelZoom: false,   // Desactiva zoom con scroll
+        doubleClickZoom: false,   // Desactiva zoom con doble click
+        boxZoom: false,           // Desactiva zoom con selección
+        keyboard: false,          // Desactiva mover con teclado
+        touchZoom: false          // Desactiva zoom con gestos en móvil
+      }).setView([5, -70], 6); // Centro entre CO y VE
+      //https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png
+      L.tileLayer('https://{s}.tile.openstreetmap.org/dark/{z}/{x}/{y}.png').addTo(this.map2); 
+      
+      // Ejemplo con tus geojson filtrados
+      Promise.all([ 
+        fetch("assets/venezuela-states.json").then(r => r.json() as Promise<FeatureCollection>)
+      ]).then(([venezuela]) => {
+        
+        const style = {
+          color: '#bdb5b5ff',
+          weight: 0.4,
+          fillOpacity: 0.4
+        };
+        // Añadir Colombia
+        // Estados que queremos resaltar
+        const targetStates = ["Zulia", "Táchira", "Apure", "Amazonas"];
+        L.geoJSON(venezuela, {
+          style: (feature: any) => {
+            console.log(feature);
+            if (targetStates.includes(feature.properties.name)) {
+              return { ...style, fillColor: '#f2643c', fillOpacity: 0.4 }; // 🔴 Rojo para resaltados
+            }
+            return { ...style, fillColor: '#e0e0e0', fillOpacity: 0.4 }; // ⚪ Gris claro para los demás
+          },
+          onEachFeature: (feature, layer: L.Polygon) => {
+            layer.bindPopup(` 
+              <div class="card-body text-center">
+                
+                
+                
+                <!-- Título -->
+                <h5 class="fw-bold mb-0" style="color:#f2643c;">${feature.properties.name}</h5>
+                <p class="text-muted text-uppercase small mb-3">Venezuela</p>
+                
+                <!-- Filas de información -->
+                <div class="d-flex justify-content-between border-bottom   small">
+                  <span>CASOS</span>
+                  <span class="fw-semibold"> ${(targetStates.includes(feature.properties.name))?'1262':'0'}</span>
+                </div> 
+                
+                <!-- Enlace -->
+                <a href="#" class="fw-bold small text-decoration-none text-primary">
+                  <i class="bi bi-file-earmark-text me-1"></i> Mas información
+                </a>
+              </div> 
+            `,{
+              className: "leaflet-bootstrap-popup", // clase para estilos
+              closeButton: false,
+              autoPan: false, 
+              offset: L.point(5, 200) // mueve 150px hacia la derecha
+            });
+            
+            // Abrir popup al pasar el mouse
+            layer.on("mouseover", function () {
+              layer.openPopup();
+              layer.setStyle({ weight: 0.8, fillOpacity: 0.8 });
+            });
+
+            // Cerrar popup cuando se sale con el mouse
+            layer.on("mouseout", function () {
+              layer.closePopup();
+              layer.setStyle({ weight: 0.4, fillOpacity: 0.4 });
+            });
+            // Click -> ejecutar tu función
+            layer.on("click", () => {
+              //this.irEvento(feature);
+            });
+          }
+        }).addTo(this.map2); 
+         
+        // Unir los features
+        const merged: FeatureCollection = {
+          type: "FeatureCollection",
+          features: [...venezuela.features]
+        };
+
+        const bounds = L.geoJSON(merged).getBounds();
+        this.map2.fitBounds(bounds);
+      });
   }
   cargarDatosComponenteRegion() {
     throw new Error('Method not implemented. cargarDatosComponenteRegion');
